@@ -1,1 +1,8 @@
 language: python
+
+deploy:
+  provider: script
+  script: bash makefile
+  on:
+    branch: master
+	

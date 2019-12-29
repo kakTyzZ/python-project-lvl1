@@ -1,8 +1,3 @@
 language: python
-
-deploy:
-  provider: script
-  script: bash makefile lint
-  on:
-    branch: master
 	
+script: makefile lint

@@ -1,6 +1,8 @@
-
-install:
+configure:
 	poetry install
-	poetry add prompt
+
+
+
+
 lint:
 	poetry run flake8

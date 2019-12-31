@@ -4,7 +4,7 @@ configure:
 	@poetry install
 
 
-lint:
+test:
 	@poetry run flake8
 
 

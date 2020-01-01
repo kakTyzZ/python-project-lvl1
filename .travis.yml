@@ -7,5 +7,4 @@ before_install:
 install:
 	make
 	
-script:
- -  make lint
+script: make lint

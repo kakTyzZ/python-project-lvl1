@@ -1,9 +1,11 @@
 language: python
-
-install: make
+python: 3.6
 
 before_install:
  - pip install poetry
+
+install:
+	make
 	
 script:
  -  make lint

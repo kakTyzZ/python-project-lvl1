@@ -3,7 +3,7 @@ install:
 	poetry add prompt	
 
 
-test:
+lint:
 	poetry run flake8
 
 

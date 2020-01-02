@@ -5,7 +5,7 @@ before_install:
     pip install poetry
 
 install:
-    make
+    install make
 	
 	
 script:

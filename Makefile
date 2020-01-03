@@ -1,6 +1,5 @@
 install:
-	poetry install
-	poetry add prompt	
+	poetry install	
 
 
 lint:

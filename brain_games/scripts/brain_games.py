@@ -1,5 +1,5 @@
 
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 from brain_games.cli import run
 

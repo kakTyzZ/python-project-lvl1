@@ -1,6 +1,4 @@
 
-#!/home/yakov/newnew/bin/python3
-
 from brain_games.cli import run
 
 

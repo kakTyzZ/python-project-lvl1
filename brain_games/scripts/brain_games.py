@@ -1,5 +1,5 @@
 
-#!/home/yakov/project/brain_games/scripts python3
+#!/usr/bin/env python3
 from brain_games.cli import run
 
 

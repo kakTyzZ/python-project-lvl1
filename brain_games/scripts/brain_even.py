@@ -9,9 +9,10 @@ def run():
     global name
     name = prompt.string('May i have your name? ')
     print(f"Hello, {name}!")
-greet()
-run()
 
+greet()
+
+run()
 
 print('Answer "yes" if number even otherwise answer "no".')
 
@@ -26,9 +27,10 @@ def random_num():
     return number
 def invalid():
     print("You can type only 'yes' or 'no'!")    
-    
+
+score = 0   
 for i in range(0,3):
-    score = 0
+    
     num = random_num()
     print("question: " + str(num))
     answer = prompt.string("Your answer: ")
@@ -43,7 +45,6 @@ for i in range(0,3):
     else:
         print(invalid())
 if score == 3:
-    print(f"Congratulations  {name}" )
+    print(f"Congratulations, {name}" )
 
-if __name__ == "__main__":
-    main()
+

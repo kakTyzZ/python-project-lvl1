@@ -1,12 +1,8 @@
 import prompt
 
 
-def greet():
+def name():
     name = prompt.string('May i have your name? ')
-    return f"Hello, {name}!"
-    
+    return name
     
 
-
-if __name__ == "__main__":
-    main()

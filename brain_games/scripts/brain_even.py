@@ -5,7 +5,7 @@ from brain_games.cli import *
 from brain import welcome
 
 
-welcome()
+print(welcome())
 
 name = name()
 
@@ -30,6 +30,7 @@ def invalid():
 
 def main():
     score = 0
+    right_answer = 0
     while score < 3:
         num = random_num()
         print("question: " + str(num))
@@ -37,16 +38,17 @@ def main():
         if num % 2 == 0 and answer == "yes":
             correct()
             score += 1
+            right_answer += 1
         elif num % 2 == 1 and answer == "no":
             correct()
             score += 1
+            right_answer += 1
         elif num % 2 == 0 and answer == "no" or num % 2 == 1 and answer == "yes":
             wrong()
             score += 1
         else:
             invalid()
-            score += 1
-        if score == 3:
+        if right_answer == 3:
             print(f"Congratulations, {name}!")
     
     

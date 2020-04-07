@@ -2,18 +2,14 @@
 import random
 import operator
 import prompt
-from brain_games.scripts.brain import welcome
 from .brain_even import correct
 from brain_games.cli import name
-
-print(welcome())
 
 
 def invalid():
     return print("You can type only numbers!")
 
-def wrong():
-    return print(f"Your answer is wrong.\nLet\'s try again, {name} !")
+
 
 opr = {
     "+": operator.add ,
@@ -22,6 +18,9 @@ opr = {
     }
 
 def main():
+    def wrong():
+        return print(f"{answer} is wrong answer;(.Correct answer was {result}.\nLet\'s try again, {name} !")
+                     
     print(f"Hello,{name}!")
     print("What is the result of the expression?")
     score = 0

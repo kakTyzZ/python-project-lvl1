@@ -2,15 +2,6 @@
 import random
 import prompt
 from brain_games.cli import name
-from brain_games.scripts.brain import welcome
-
-
-
-
-name = name()
-
-
-
 
 
 def wrong():
@@ -29,10 +20,7 @@ def invalid():
 
 
 
-
-
 def main():
-    print(welcome())
     print(f"Hello,{name}!")
     print('Answer "yes" if number even otherwise answer "no".')
     result = 0

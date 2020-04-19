@@ -24,9 +24,9 @@ def invalid():
 def main():
     print(f"Hello,{name}!")
     print('Answer "yes" if number even otherwise answer "no".')
-    score = 0
-    right_answer = 0
-    while score < 3:
+    TIMES_PLAYED = 0
+    RIGHT_ANSWER = 0
+    while TIMES_PLAYED < 3:
         num = random_num()
         print("question: " + str(num))
         answer = prompt.string("Your answer: ")
@@ -34,16 +34,16 @@ def main():
             invalid()
         elif num % 2 == 0 and answer == "yes":
             correct()
-            score += 1
-            right_answer += 1
+            TIMES_PLAYED += 1
+            RIGHT_ANSWER += 1
         elif num % 2 == 1 and answer == "no":
             correct()
-            score += 1
-            right_answer += 1
+            TIMES_PLAYED += 1
+            RIGHT_ANSWER += 1
         else:
             wrong()
-            score += 1
-        if right_answer == 3:
+            TIMES_PLAYED += 1
+        if RIGHT_ANSWER == 3:
             print(f"Congratulations, {name}!")
 
 

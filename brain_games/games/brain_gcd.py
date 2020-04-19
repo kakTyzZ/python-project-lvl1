@@ -28,24 +28,24 @@ def main():
         return print("You are wrong!")
     print(f"Hello,{name}!")
     print("Find the greatest common divisor of given numbers.")
-    times_played = 0
-    answer = 0
-    while times_played < 3:
+    TIMES_PLAYED = 0
+    ANSWER = 0
+    while TIMES_PLAYED < 3:
         num1 = random.randint(1, 100)
         num2 = random.randint(1, 100)
-        right_answer = nod(num1, num2)
+        RIGHT_ANSWER = nod(num1, num2)
         print(f"question: {num1},{num2}")
-        user_answer = prompt.integer("Your answer: ")
-        if right_answer == user_answer:
+        USER_ANSWER = prompt.integer("Your answer: ")
+        if RIGHT_ANSWER == USER_ANSWER:
             correct()
-            times_played += 1
-            answer += 1
-        elif user_answer != right_answer:
+            TIMES_PLAYED += 1
+            ANSWER += 1
+        elif USER_ANSWER != RIGHT_ANSWER:
             wrong()
-            times_played += 1
+            TIMES_PLAYED += 1
         else:
             invalid()
-        if answer == 3:
+        if ANSWER == 3:
             print(f"Congratulations, {name}!")
 
 

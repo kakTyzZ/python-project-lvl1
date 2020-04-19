@@ -20,7 +20,7 @@ opr = {
 def main():
     def wrong():
         return print(
-            f"{answer} is wrong answer.Correct answer was {result}.\nLet\'s try again, {name} !")
+            f"{answer} is wrong answer.Correct answer was {result}.")
     print(f"Hello,{name}!")
     print("What is the result of the expression?")
     score = 0

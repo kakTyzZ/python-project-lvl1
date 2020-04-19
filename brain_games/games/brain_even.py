@@ -5,8 +5,7 @@ from brain_games.cli import name
 
 
 def wrong():
-    return print(
-        f"'yes' is wrong answer.Correct answer was 'no'.\n Let\'s try again, {name}!")
+    return print(f"'yes' is wrong answer.Correct answer was 'no'.")
 
 
 def correct():
@@ -25,14 +24,15 @@ def invalid():
 def main():
     print(f"Hello,{name}!")
     print('Answer "yes" if number even otherwise answer "no".')
-    result = 0
     score = 0
     right_answer = 0
     while score < 3:
         num = random_num()
         print("question: " + str(num))
         answer = prompt.string("Your answer: ")
-        if num % 2 == 0 and answer == "yes" or answer == result:
+        if answer.isdigit():
+            invalid()
+        elif num % 2 == 0 and answer == "yes":
             correct()
             score += 1
             right_answer += 1
@@ -40,11 +40,9 @@ def main():
             correct()
             score += 1
             right_answer += 1
-        elif num % 2 == 0 and answer == "no" or num % 2 == 1 and answer == "yes" or answer != result:
+        else:
             wrong()
             score += 1
-        else:
-            invalid()
         if right_answer == 3:
             print(f"Congratulations, {name}!")
 

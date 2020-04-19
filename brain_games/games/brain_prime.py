@@ -9,7 +9,7 @@ import random
 
 def main():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    
+
     def is_prime(n):
         if n == 2:
             return "yes"
@@ -22,12 +22,13 @@ def main():
             if n % divisor == 0:
                 return "no"
         return "yes"
+
     def wrong():
         return print("You are wrong!")
     times_played = 0
     right_answer = 0
     while times_played < 3:
-        num = random.randint(2,500)
+        num = random.randint(2, 500)
         print(f"Question:{num}")
         user_answer = prompt.string("Your answer: ")
 
@@ -40,11 +41,10 @@ def main():
             wrong()
             times_played += 1
         else:
-            anvalid()
+            invalid()
         if right_answer == 3:
             print(f"Congratulations, {name}!")
-            
-        
+
 
 if __name__ == "__main__":
     main()

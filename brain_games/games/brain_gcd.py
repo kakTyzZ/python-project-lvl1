@@ -6,22 +6,21 @@ import prompt
 from .brain_calc import invalid
 
 
-def nod(a,b):
-    #Check the lowest number
+def nod(a, b):
+    # Check the lowest number
     if a < b:
         x = a
     else:
         x = b
-    #Add numbers to a list
+    # Add numbers to a list
     l1 = []
     for i in range(x):
-        l1.append(i+1)
+        l1.append(i + 1)
     l2 = l1[::-1]
     for i in l2:
         if a % i == 0 and b % i == 0:
             return i
             break
-    
 
 
 def main():
@@ -32,9 +31,9 @@ def main():
     times_played = 0
     answer = 0
     while times_played < 3:
-        num1 = random.randint(1,100)
-        num2 = random.randint(1,100)
-        right_answer = nod(num1,num2)
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        right_answer = nod(num1, num2)
         print(f"question: {num1},{num2}")
         user_answer = prompt.integer("Your answer: ")
         if right_answer == user_answer:
@@ -48,19 +47,7 @@ def main():
             invalid()
         if answer == 3:
             print(f"Congratulations, {name}!")
-        
-      
-    
-    
-    
-    
-    
-    
-    
-    
-
 
 
 if __name__ == "__main__":
     main()
-

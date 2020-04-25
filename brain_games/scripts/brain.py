@@ -22,20 +22,21 @@ def nod(a, b):
             break
         
         
-num1 = random.randint(1, 100)
-num2 = random.randint(1, 100)  
+
       
-def gcd_answer():
-    RIGHT_ANSWER = nod(num1, num2)
-    return RIGHT_ANSWER
-
-def gcd_user_question():
-    print(f"question: {num1},{num2}")
 
 
 
 
-def main(*args):
+
+
+
+
+def main():
+    
+    def gcd_answer():
+        right_answer = nod(num1, num2)
+        return right_answer  
     def wrong():
         return print("You are wrong!")
     
@@ -45,13 +46,12 @@ def main(*args):
     def correct():
         return print("Correct!")
     times_played = 0
+    user_right_answer = 0
     while times_played < 3:
-        for i in args:
-            right_answer = args[0]
-            q = args[1]
-        user_right_answer = 0
-        right_answer = right_answer()
-        print(q())
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        num = str(num1) + "," + str(num2)
+        print(f"question: {num}")
         USER_ANSWER = prompt.integer("Your answer: ")
         if right_answer > USER_ANSWER:
             correct()
@@ -65,6 +65,8 @@ def main(*args):
                 
         if user_right_answer == 3:
             print(f"Congratulations, {name}!")
+            
+         
             
 if __name__ == "__main__":
     main()

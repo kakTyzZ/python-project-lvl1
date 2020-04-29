@@ -1,15 +1,16 @@
 import random
 import prompt
-from brain_games.cli import name
+
 
 def welcome():
     return "Welcome to the brain Games!"
 
-welcome()
-print(f"Hello,{name}!")
 
-def main(right_answer):
+
+def main(name=None,right_answer=None):
     
+    
+    print(f"Hello,{name}!")
     
     def wrong():
         return print("You are wrong!")
@@ -22,7 +23,7 @@ def main(right_answer):
     times_played = 0
     user_right_answer = 0
     while times_played < 3:
-        right_answer = right_answer1
+        
         user_answer = prompt.integer("Your answer: ")
         if right_answer == user_answer:
             correct()

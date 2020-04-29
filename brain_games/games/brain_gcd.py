@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 import random
 import prompt
-from brain_games.scripts.brain import main
+from brain_games.scripts.brain import main,welcome
+from brain_games.cli import name
 
+
+welcome()
+name = name()
 print("Find the greatest common divisor of given numbers.")
 
 def nod(a, b):
@@ -34,9 +38,11 @@ num2 = random_num2()
 
 
 def gcd_answer(num1,num2):
+    global right_answer
     right_answer = nod(num1, num2)
     return right_answer  
-right_answer1 = gcd_answer(num1,num2)
+right_answer = gcd_answer(num1,num2)
+
 
 
 
@@ -50,7 +56,7 @@ question = question_num(num1,num2)
 print("test")
 
 
-main(right_answer1)
+main(name=name,right_answer=right_answer)
 
 
 if __name__ == "__main__":

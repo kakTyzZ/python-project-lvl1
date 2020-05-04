@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import random
-import prompt
-from brain_games.scripts.brain import main,welcome
+from brain_games.scripts.brain import run, welcome
 from brain_games.cli import name
 
 
@@ -9,57 +8,44 @@ welcome()
 name = name()
 print("Find the greatest common divisor of given numbers.")
 
-def nod(a, b):
-    # Check the lowest number
-    if a < b:
-        x = a
-    else:
-        x = b
-    # Add numbers to a list
-    l1 = []
-    for i in range(x):
-        l1.append(i + 1)
-    l2 = l1[::-1]
-    for i in l2:
-        if a % i == 0 and b % i == 0:
-            return i
-            break
+
+def main_data():
+    data = {}
+    while len(data) < 3:
+        def nod(a, b):
+            # Check the lowest number
+            if a < b:
+                x = a
+            else:
+                x = b
+            # Add numbers to a list
+            l1 = []
+            for i in range(x):
+                l1.append(i + 1)
+            l2 = l1[::-1]
+            for i in l2:
+                if a % i == 0 and b % i == 0:
+                    return i
+                    break
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        data[nod(num1, num2)] = str(num1) + "," + str(num2)
+    return data
 
 
-def random_num1():
-    num1 = random.randint(1, 100)
-    return num1
-num1 = random_num1()
-def random_num2():
-    num2 = random.randint(1, 100)
-    return num2
-num2 = random_num2()
-    
+data = main_data()
+right_answer = list(data.keys())
+question = list(data.values())
 
 
-def gcd_answer(num1,num2):
-    global right_answer
-    right_answer = nod(num1, num2)
-    return right_answer  
-right_answer = gcd_answer(num1,num2)
+print(question, right_answer)
+
+run(right_answer=right_answer, question=question, name=name)
 
 
-
-
-
-def question_num(num1,num2):
-    num = str(num1) + "," + str(num2)
-    return print(f"Question:{num}")
-question = question_num(num1,num2)
-
-
-print("test")
-
-
-main(name=name,right_answer=right_answer)
+def main():
+    pass
 
 
 if __name__ == "__main__":
     main()
-
-

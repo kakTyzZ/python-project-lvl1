@@ -1,50 +1,34 @@
 #!/usr/bin/env python
 import random
-import prompt
 from brain_games.cli import name
+from brain_games.scripts.brain import run, welcome
 
 
-def wrong():
-    return print(f"'yes' is wrong answer.Correct answer was 'no'.")
+welcome()
+name = name()
 
 
-def correct():
-    return print("Correct!")
+print('Answer "yes" if number even otherwise answer "no".')
+
+right_answer = ["yes", "yes", "yes"]
+question = []
 
 
 def random_num():
-    number = random.randint(1, 20)
-    return number
+    for i in range(3):
+        num = random.randint(1, 20)
+        question.append(num)
 
 
-def invalid():
-    return print("You can type only 'yes' or 'no'!")
+random_num()
+print(question)
+
+
+run(right_answer=right_answer, question=question, name=name)
 
 
 def main():
-    print(f"Hello,{name}!")
-    print('Answer "yes" if number even otherwise answer "no".')
-    TIMES_PLAYED = 0
-    RIGHT_ANSWER = 0
-    while TIMES_PLAYED < 3:
-        num = random_num()
-        print("question: " + str(num))
-        answer = prompt.string("Your answer: ")
-        if answer.isdigit():
-            invalid()
-        elif num % 2 == 0 and answer == "yes":
-            correct()
-            TIMES_PLAYED += 1
-            RIGHT_ANSWER += 1
-        elif num % 2 == 1 and answer == "no":
-            correct()
-            TIMES_PLAYED += 1
-            RIGHT_ANSWER += 1
-        else:
-            wrong()
-            TIMES_PLAYED += 1
-        if RIGHT_ANSWER == 3:
-            print(f"Congratulations, {name}!")
+    pass
 
 
 if __name__ == "__main__":

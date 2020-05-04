@@ -1,12 +1,10 @@
 [tool.poetry]
 name = "kaktyzz_brain_games"
-version = "0.1.8"
+version = "0.1.9"
 description = "Five brain-games by Yakov_Budarin"
 authors = ["Yakov <kaktyzz-imba@mail.ru>"]
-repository = ["pip install -i https://test.pypi.org/simple/ kaktyzz-brain-games"]
-classifiers = [
-    "Topic :: Games :: Libraries :: Python Modules"
-]
+repository = "https://test.pypi.org/simple/ kaktyzz-brain-games"
+
 packages = [
  { include = "brain_games" },
 ]
